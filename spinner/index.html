@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="./styles.css"/>
+    <title>Spinner</title>
+</head>
+<body>
+
+<section>
+    <svg>
+        <filter id="gooey">
+            <feGaussianBlur in="SourceGraphic"
+                            stdDeviation="10"/>
+            <feColorMatrix values="
+                   1 0 0 0 0
+                   0 1 0 0 0
+                   0 0 1 0 0
+                   0 0 0 20 -10
+            "></feColorMatrix>
+        </filter>
+    </svg>
+    <div class="loader">
+        <span style="--index:1"></span>
+        <span style="--index:2"></span>
+        <span style="--index:3"></span>
+        <span style="--index:4"></span>
+        <span style="--index:5"></span>
+        <span style="--index:6"></span>
+        <span style="--index:7"></span>
+        <span style="--index:8"></span>
+        <span class="rotate" style="--rotate-index:0"></span>
+        <span class="rotate" style="--rotate-index:1"></span>
+        <span class="rotate" style="--rotate-index:2"></span>
+        <span class="rotate" style="--rotate-index:3"></span>
+        <span class="rotate" style="--rotate-index:4"></span>
+    </div>
+</section>
+</body>
+</html>
+
