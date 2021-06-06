@@ -1,0 +1,219 @@
+body {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #2F2F2F;
+}
+
+body * {
+    box-sizing: inherit;
+}
+
+.top {
+    position: relative;
+    left: 25px;
+    height: 150px;
+    width: 200px;
+    background: lightblue;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.top::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -57px;
+    height: 152%;
+    width: 100px;
+    border-radius: 50%;
+    background: #2F2F2F;
+}
+
+.top::after {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -55px;
+    height: 152%;
+    width: 100px;
+    border-radius: 50%;
+    background: #2F2F2F;
+}
+
+/*
+.top::before {
+    position: absolute;
+    content: '';
+    left: -35px;
+    border-bottom: 100px solid #2F2F2F;
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    height: 0;
+    width: 90px;
+}
+ */
+
+.above-label {
+    position: relative;
+    height: 100px;
+    width: 250px;
+}
+
+.above-label::before {
+    content: '';
+    position: absolute;
+    top: -55px;
+    left: 0;
+    height: 155px;
+    width: 250px;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(97,43,22,1) 88%, rgba(0,0,0,1) 100%);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.coke-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 25px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 2%, rgba(97,43,22,1) 100%, rgba(0,0,0,1) 100%);
+}
+
+.label {
+    width: 250px;
+    height: 200px;
+    background: linear-gradient(90deg, rgba(215,3,21,1) 0%, rgba(255,134,134,1) 16%, rgba(250,2,16,1) 52%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Lobster', cursive;
+    font-size: 100px;
+}
+
+.lid {
+    position: relative;
+    left: 62px;
+    height: 70px;
+    width: 120px;
+    background: #CC0422;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.lid .lid-line {
+    height: 50px;
+    width: 5px;
+    background: #AE2833;
+}
+
+.lid-line:first-child, .lid-line:last-child{
+    height: 45px;
+    margin-top: 4px;
+}
+
+.bottle-head {
+    position: relative;
+    left: 52px;
+    width: 140px;
+    height: 10px;
+    background: black;
+}
+
+.below-label-one {
+    position: relative;
+    height: 150px;
+    width: 250px;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(97,43,22,1) 88%, rgba(0,0,0,1) 100%);
+    overflow: hidden;
+}
+
+
+.below-label-one::before {
+    content: '';
+    position: absolute;
+    top: -43px;
+    left: -116px;
+    background: #2F2F2F;
+    width: 130px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.below-label-one::after {
+    content: '';
+    position: absolute;
+    top: -43px;
+    right: -116px;
+    background: #2F2F2F;
+    width: 130px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.bottom {
+    position: relative;
+    top: -25px;
+    left: 0;
+    width: 250px;
+    height: 200px;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(97,43,22,1) 88%, rgba(0,0,0,1) 100%);
+    border-radius: 20%;
+    box-shadow: 0 5px 2px -2px rgba(0, 0, 0, 0.2);
+}
+
+.bubbles {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.bubble {
+    position: absolute;
+    left: calc(var(--bubble-index) * 50px);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    opacity: 0;
+    background:rgba(197,255,255,.4); /* makes our bubble slightly lighter in color than the background */
+    box-shadow:inset 10px 10px 50px rgba(200,255,255,.6);
+    animation: animate 5s linear infinite;
+    animation-delay: calc(var(--bubble-delay) * 0.5s);
+    z-index: 5;
+}
+
+.bubble:before {
+    content:"";
+    display:block;
+    position:absolute;
+    width:50%;
+    height:50%;
+    top:7.5%;
+    left:7.5%;
+    border-radius: 75% 25%;
+    box-shadow:inset 10px 10px 50px rgba(255,255,255,.6);
+}
+
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-100vh);
+        opacity: 1;
+    }
+
+}
